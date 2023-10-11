@@ -6,12 +6,12 @@
 # the fraction in lowest terms
 
 def lowestTerms(numerator,denominator):
-
-
-
-
-
-
+    for i in range(denominator):
+        if (numerator % (denominator - i)) == 0 and (denominator % (denominator - i)) == 0:
+            anser = tuple((numerator / (denominator - i), denominator / (denominator - i)))
+            return anser
+    else:
+        return tuple((numerator, denominator))
 
 def main():
     assert lowestTerms(2,4) == (1,2)
@@ -21,5 +21,3 @@ def main():
 
 if __name__ == "__main__":
     main()
-
-    
